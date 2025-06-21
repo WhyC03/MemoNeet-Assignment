@@ -215,7 +215,7 @@ class ProductDetailScreen extends StatelessWidget {
                         Icon(Icons.keyboard_arrow_down_outlined, size: 30),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 20),
                     Text(
                       product.productDetails,
                       maxLines: 12,

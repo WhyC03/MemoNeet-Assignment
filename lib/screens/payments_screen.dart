@@ -28,7 +28,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
     double igst = (widget.product.discountedPrice) * 0.05;
     double total = (widget.product.discountedPrice) + igst - discount;
 
-    double progress = 0.35;
+    // double progress = 0.35;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -181,63 +181,63 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
               ),
               SizedBox(height: 20),
               // Unlock New Offer
-              CustomContainer(
-                contentChild: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.lock, color: color4, size: 25),
-                          SizedBox(width: 5),
-                          Text(
-                            "Shop for 4000 more to unlock special price",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10),
-                      LinearProgressIndicator(
-                        value: progress, // value between 0.0 and 1.0
-                        minHeight: 5,
-                        color: color4,
-                        backgroundColor: Colors.grey[300],
-                      ),
-                      SizedBox(height: 10),
-                      Row(children: []),
-                      SizedBox(height: 10),
-                      Row(children: []),
-                    ],
-                  ),
-                ),
-                headerChild: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: color1, width: 2.5),
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: Icon(Icons.percent, color: color1),
-                      ),
-                      SizedBox(width: 10),
-                      Text(
-                        "Unlock New Offer",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
+              // CustomContainer(
+              //   contentChild: Padding(
+              //     padding: const EdgeInsets.all(10.0),
+              //     child: Column(
+              //       children: [
+              //         Row(
+              //           children: [
+              //             Icon(Icons.lock, color: color4, size: 25),
+              //             SizedBox(width: 5),
+              //             Text(
+              //               "Shop for 4000 more to unlock special price",
+              //               style: TextStyle(
+              //                 fontWeight: FontWeight.w700,
+              //                 fontSize: 15,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //         SizedBox(height: 10),
+              //         LinearProgressIndicator(
+              //           value: progress, // value between 0.0 and 1.0
+              //           minHeight: 5,
+              //           color: color4,
+              //           backgroundColor: Colors.grey[300],
+              //         ),
+              //         SizedBox(height: 10),
+              //         Row(children: []),
+              //         SizedBox(height: 10),
+              //         Row(children: []),
+              //       ],
+              //     ),
+              //   ),
+              //   headerChild: Padding(
+              //     padding: const EdgeInsets.symmetric(horizontal: 10),
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.start,
+              //       children: [
+              //         Container(
+              //           decoration: BoxDecoration(
+              //             border: Border.all(color: color1, width: 2.5),
+              //             borderRadius: BorderRadius.circular(50),
+              //           ),
+              //           child: Icon(Icons.percent, color: color1),
+              //         ),
+              //         SizedBox(width: 10),
+              //         Text(
+              //           "Unlock New Offer",
+              //           style: TextStyle(
+              //             fontWeight: FontWeight.w900,
+              //             fontSize: 18,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(height: 20),
               // Use Coupons
               CustomContainer(
                 contentChild: Padding(

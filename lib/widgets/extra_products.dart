@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoneet_assignment/models/product_model.dart';
+import 'package:memoneet_assignment/screens/product_detail_screen.dart';
 import 'package:memoneet_assignment/widgets/custom_button_one.dart';
 
 class ExtraProducts extends StatelessWidget {
@@ -13,7 +14,7 @@ class ExtraProducts extends StatelessWidget {
       discount: 50,
       productDetails: 'Complete physics material with solved examples.',
       purchased: true,
-      imagePath: 'assets/images/biology_memes.png',
+      imagePath: 'assets/images/Memes.png',
       examCategory: 'NEET 2024',
       tags: ['Biology'],
     ),
@@ -48,7 +49,12 @@ class ExtraProducts extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                ProductDetailScreen.route(extraProducts[index]),
+              );
+            },
             child: Container(
               width: 220,
               height: 700,

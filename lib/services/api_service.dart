@@ -17,13 +17,4 @@ class ApiService {
     }
   }
 
-  static Future<List<Map<String, dynamic>>> fetchCart() async {
-    final response = await http.get(Uri.parse('$baseUrl/cart'));
-
-    if (response.statusCode == 200) {
-      return List<Map<String, dynamic>>.from(jsonDecode(response.body));
-    } else {
-      throw Exception('Failed to load cart');
-    }
-  }
 }

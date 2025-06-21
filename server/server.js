@@ -43,9 +43,9 @@ app.post('/cart', (req, res) => {
  * GET /cart
  * Returns all items in the cart
  */
-app.get('/cart', (req, res) => {
-  res.status(200).json(cart);
-});
+// app.get('/cart', (req, res) => {
+//   res.status(200).json(cart);
+// });
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
