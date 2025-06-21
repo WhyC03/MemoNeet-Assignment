@@ -150,7 +150,7 @@ class ProductDetailScreen extends StatelessWidget {
                       width: size.width,
                       height: 50,
                       onTap: () {
-                        Navigator.push(context, PaymentsScreen.route());
+                        Navigator.push(context, PaymentsScreen.route(product));
                       },
                     ),
                     SizedBox(height: 20),

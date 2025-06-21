@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:memoneet_assignment/screens/home_screen.dart';
-import 'package:memoneet_assignment/widgets/custom_button_one.dart';
+import 'package:memoneet_assignment/theme.dart';
 import 'package:memoneet_assignment/widgets/custom_button_two.dart';
 
 class PaymentSuccessfullScreen extends StatelessWidget {
+  static route() =>
+      MaterialPageRoute(builder: (context) => PaymentSuccessfullScreen());
   const PaymentSuccessfullScreen({super.key});
 
   @override
@@ -39,9 +41,35 @@ class PaymentSuccessfullScreen extends StatelessWidget {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          CustomButtonOne(width: size.width * 0.3, height: 50),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushAndRemoveUntil(
+                context,
+                HomeScreen.route(),
+                (route) => false,
+              );
+            },
+            child: Container(
+              height: 50,
+              width: size.width * 0.35,
+              decoration: BoxDecoration(
+                border: Border.all(color: color1, width: 2),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Center(
+                child: Text(
+                  "HOME",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: color1,
+                  ),
+                ),
+              ),
+            ),
+          ),
           CustomButtonTwo(
-            text: 'Explore Shop',
+            text: 'EXPLORE SHOP',
             width: size.width * 0.6,
             height: 50,
             onTap: () {

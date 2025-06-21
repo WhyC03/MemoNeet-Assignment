@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:memoneet_assignment/models/product_model.dart';
 import 'package:memoneet_assignment/screens/product_detail_screen.dart';
+import 'package:memoneet_assignment/services/api_service.dart';
 import 'package:memoneet_assignment/theme.dart';
 import 'package:memoneet_assignment/widgets/banner_carousel.dart';
 import 'package:memoneet_assignment/widgets/product_card.dart';
@@ -14,6 +17,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Product> products = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadProducts();
+  }
+
+  Future<void> loadProducts() async {
+    try {
+      final result = await ApiService.fetchProducts();
+      setState(() => products = result);
+    } catch (e) {
+      log("Failed to load products: $e");
+    }
+  }
+
   int selectedIndex = 0;
   int selectedChipIndex = -1; // -1 means none selected
   final List<String> chipLabels = ['Biology', 'Chemistry', 'Physics', 'Notes'];
@@ -27,36 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   String selectedCategory = '';
-
-  final List<Product> products = [
-    Product(
-      id: '1',
-      productName: 'Physics Notes',
-      actualPrice: 1200,
-      discountedPrice: 899,
-      discount: 25,
-      productDetails:
-          'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
-      purchased: true,
-      imagePath: 'assets/images/Physics_notes.png',
-      examCategory: 'NEET 2024',
-      tags: ['Physics', 'Notes'],
-    ),
-    Product(
-      id: '2',
-      productName: 'Biology Notes',
-      actualPrice: 1000,
-      discountedPrice: 750,
-      discount: 25,
-      productDetails:
-          'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
-      purchased: false,
-      imagePath: 'assets/images/Biology_notes.png',
-      examCategory: 'NEET 2025',
-      tags: ['Biology', 'Notes'],
-    ),
-    // Add more products...
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -215,33 +205,51 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 10),
                   SizedBox(
-                    height: size.height * 0.5,
-                    child: GridView.builder(
+                    child: ListView.builder(
+                      shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
-                      itemCount:
-                          filteredProducts.length, // Use filteredProducts
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: 0.6,
-                        crossAxisSpacing: 8,
-                        mainAxisSpacing: 8,
-                      ),
+                      itemCount: (filteredProducts.length / 2).ceil(),
                       itemBuilder: (context, index) {
-                        return ProductCard(
-                          product: filteredProducts[index],
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              ProductDetailScreen.route(
-                                filteredProducts[index],
+                        int first = index * 2;
+                        int second = first + 1;
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Expanded(
+                                child: ProductCard(
+                                  product: filteredProducts[first],
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      ProductDetailScreen.route(filteredProducts[first]),
+                                    );
+                                  },
+                                ),
                               ),
-                            );
-                          },
+                              SizedBox(width: 10),
+                              if (second < filteredProducts.length)
+                                Expanded(
+                                  child: ProductCard(
+                                    product: filteredProducts[second],
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        ProductDetailScreen.route(filteredProducts[second]),
+                                      );
+                                    },
+                                  ),
+                                )
+                              else
+                                Expanded(child: SizedBox()), // Empty space if odd number
+                            ],
+                          ),
                         );
                       },
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 150),
                 ],
               ),
             ),
@@ -261,18 +269,20 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children:
                   iconItems.map((item) {
-                    return Column(
-                      children: [
-                        Icon(item['icon'], size: 35),
-                        // SizedBox(height: 4),
-                        Text(
-                          item['label'],
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
+                    return InkWell(
+                      onTap: () {},
+                      child: Column(
+                        children: [
+                          Icon(item['icon'], size: 35),
+                          Text(
+                            item['label'],
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     );
                   }).toList(),
             ),

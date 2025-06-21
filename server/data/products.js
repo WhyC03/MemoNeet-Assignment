@@ -1,13 +1,14 @@
 const products = [
   {
-    id: "1",
+    id: "5",
     productName: "Physics Notes",
     actualPrice: 1000,
     discountedPrice: 500,
     discount: 50,
-    productDetails: "Complete physics material for NEET 2024.",
+    productDetails:
+      'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
     purchased: false,
-    imagePath: "assets/images/neet_physics.png",
+    imagePath: "assets/images/Physics_notes.png",
     examCategory: "NEET 2024",
     tags: ["Physics", "Notes"],
   },
@@ -17,11 +18,12 @@ const products = [
     actualPrice: 1000,
     discountedPrice: 500,
     discount: 50,
-    productDetails: "Detailed biology notes for NEET 2025.",
+    productDetails:
+      'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
     purchased: false,
-    imagePath: "assets/images/neet_biology.png",
+    imagePath: "assets/images/Biology_notes.png",
     examCategory: "NEET 2025",
-    tags: ["Physics", "Notes"],
+    tags: ["Biology", "Notes"],
   },
   {
     id: "3",
@@ -29,35 +31,38 @@ const products = [
     actualPrice: 1000,
     discountedPrice: 500,
     discount: 50,
-    productDetails: "Detailed biology notes for NEET 2025.",
+    productDetails:
+      'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
     purchased: false,
-    imagePath: "assets/images/neet_biology.png",
+    imagePath: "assets/images/Podcast.png",
     examCategory: "NEET 2025",
-    tags: ["Physics", "Notes"],
+    tags: ["Biology"],
   },
   {
-    id: "4",
+    id: "1",
     productName: "Biology Practice",
     actualPrice: 1000,
     discountedPrice: 500,
     discount: 50,
-    productDetails: "Detailed biology notes for NEET 2025.",
+    productDetails:
+      'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
     purchased: true,
-    imagePath: "assets/images/neet_biology.png",
+    imagePath: "assets/images/biology_practice.png",
     examCategory: "NEET 2025",
-    tags: ["Physics", "Notes"],
+    tags: ["Biology"],
   },
   {
-    id: "5",
+    id: "4",
     productName: "Biology Memes",
     actualPrice: 1000,
     discountedPrice: 500,
     discount: 50,
-    productDetails: "Detailed biology notes for NEET 2025.",
+    productDetails:
+      'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
     purchased: false,
-    imagePath: "assets/images/neet_biology.png",
+    imagePath: "assets/images/biology_memes.png",
     examCategory: "NEET 2025",
-    tags: ["Physics", "Notes"]
+    tags: ["Biology"],
   },
 ];
 

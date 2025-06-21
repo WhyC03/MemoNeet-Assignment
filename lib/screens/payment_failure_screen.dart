@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:memoneet_assignment/models/product_model.dart';
 import 'package:memoneet_assignment/screens/payments_screen.dart';
 import 'package:memoneet_assignment/widgets/custom_button_two.dart';
 
 class PaymentFailureScreen extends StatelessWidget {
-  const PaymentFailureScreen({super.key});
+  final Product product;
+  static route(Product product) =>
+      MaterialPageRoute(builder: (context) => PaymentFailureScreen(product: product));
+  const PaymentFailureScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +75,7 @@ class PaymentFailureScreen extends StatelessWidget {
             onTap: () {
               Navigator.pushAndRemoveUntil(
                 context,
-                PaymentsScreen.route(),
+                PaymentsScreen.route(product),
                 (route) => false,
               );
             },
