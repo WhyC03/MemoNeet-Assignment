@@ -24,27 +24,27 @@ cd server
 npm run dev
 ```
 
-In lib/services/api_service.dart file, add your own IP Address.
-
 - Server runs at: `http://localhost:3000`
 - If testing on a physical device, replace `localhost` with your local IP (e.g., `http://<Your-IP-Address>:3000`)
 
 ### ✨ Available API Endpoints
 
-| Method | Endpoint     | Description                         |
-|--------|--------------|-------------------------------------|
-| GET    | `/products`  | Returns a list of all products      |
-| POST   | `/purchase`  | (Optional) Records a product purchase |
+| Method | Endpoint    | Description                           |
+| ------ | ----------- | ------------------------------------- |
+| GET    | `/products` | Returns a list of all products        |
+| POST   | `/purchase` | (Optional) Records a product purchase |
 
 ---
 
 ## 📲 Frontend Setup (Flutter)
 
 ### Requirements
+
 - Flutter SDK
 - Android/iOS Emulator or real device
 
 ### Run the App
+
 ```bash
 flutter pub get
 flutter run
@@ -79,3 +79,4 @@ lib/
 ├── screens/
 │   ├── home_screen.dart
 │   └── purchase_success_screen.dart
+```
