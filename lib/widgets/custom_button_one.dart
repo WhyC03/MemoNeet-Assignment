@@ -8,12 +8,11 @@ class CustomButtonOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: 50,
-        width: size.width,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           border: Border.all(color: color1, width: 2),
           borderRadius: BorderRadius.circular(10),

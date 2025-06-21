@@ -4,16 +4,17 @@ import 'package:memoneet_assignment/theme.dart';
 class CustomButtonTwo extends StatelessWidget {
   final String text;
   final double width;
-  const CustomButtonTwo({super.key, required this.text, required this.width});
+  final double height;
+  final VoidCallback onTap;
+  const CustomButtonTwo({super.key, required this.text, required this.width, required this.height, required this.onTap,});
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
-        height: 50,
-        width: size.width,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           color: color1,
           borderRadius: BorderRadius.circular(10),

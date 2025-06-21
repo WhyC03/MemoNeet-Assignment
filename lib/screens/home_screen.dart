@@ -6,6 +6,7 @@ import 'package:memoneet_assignment/widgets/banner_carousel.dart';
 import 'package:memoneet_assignment/widgets/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
+  static route() => MaterialPageRoute(builder: (context) => HomeScreen());
   const HomeScreen({super.key});
 
   @override
@@ -34,7 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
       actualPrice: 1200,
       discountedPrice: 899,
       discount: 25,
-      productDetails: 'Complete physics material with solved examples.',
+      productDetails:
+          'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
       purchased: true,
       imagePath: 'assets/images/Physics_notes.png',
       examCategory: 'NEET 2024',
@@ -46,7 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
       actualPrice: 1000,
       discountedPrice: 750,
       discount: 25,
-      productDetails: 'Detailed biology notes for NEET 2025.',
+      productDetails:
+          'What Sets This Book Apart? \nColorful Mindmaps: Visualize intricate concepts and formulas effortlessly through mind maps, enhancing your comprehension and retention. Complete Coverage: Covering every chapter of Physics, Chemistry, and Biology, this book ensures you have a solid grasp of all topics required for the NEET exam. \nEmphasized Important Topics: Focused on the most crucial areas for NEET, the book highlights the topics that carry the highest relevance and weightage. \nBook Description: "MIND MAPS FOR NEET" is your ultimate study companion designed to help you conquer the NEET exam with confidence. Through the innovative approach of colorful mind maps, this book transforms complex concepts into easy-to-understand visual aids. \nIt comprehensively covers all chapters of Physics, Chemistry, and Biology, adhering strictly to the latest NEET exam syllabus. Moreover, it strategically emphasizes the most important topics, ensuring that your preparation is targeted and effective. \n\nWhat Will You Learn? \nEnhance learning and memory retention by the usage of colorful Mindmaps in visualizing and comprehending complex ideas & formulas. \nComprehensive coverage of all subjects ensures a strong foundation, enabling aspirants to tackle the NEET syllabus more confidently. A thorough understanding of these basics is essential for solving advanced problems. Stay aligned with the latest NEET exam syllabus, making your preparation relevant and up-to-date. \nFocus your efforts on the most significant topics as earmarked for the NEET exam, boosting your chances of success.',
       purchased: false,
       imagePath: 'assets/images/Biology_notes.png',
       examCategory: 'NEET 2025',
@@ -214,6 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: size.height * 0.5,
                     child: GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
                       itemCount:
                           filteredProducts.length, // Use filteredProducts
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -108,7 +108,7 @@ class ProductCard extends StatelessWidget {
                       //     ),
                       //   ),
                       // ),
-                      CustomButtonOne(width: 120, height: 40)
+                      Center(child: CustomButtonOne(width: 140, height: 50))
                     ],
                   ),
                 ),
