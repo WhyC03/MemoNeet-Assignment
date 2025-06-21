@@ -24,8 +24,10 @@ cd server
 npm run dev
 ```
 
+In lib/services/api_service.dart file, add your own IP Address.
+
 - Server runs at: `http://localhost:3000`
-- If testing on a physical device, replace `localhost` with your local IP (e.g., `http://192.168.1.10:3000`)
+- If testing on a physical device, replace `localhost` with your local IP (e.g., `http://<Your-IP-Address>:3000`)
 
 ### ✨ Available API Endpoints
 
