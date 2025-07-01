@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memoneet_assignment/models/product_model.dart';
+import 'package:memoneet_assignment/screens/home_screen.dart';
 import 'package:memoneet_assignment/screens/payments_screen.dart';
 import 'package:memoneet_assignment/theme.dart';
 import 'package:memoneet_assignment/widgets/custom_button_one.dart';
@@ -39,7 +40,11 @@ class ProductDetailScreen extends StatelessWidget {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.pop(context);
+                                  Navigator.pushAndRemoveUntil(
+                                    context,
+                                    HomeScreen.route(),
+                                    (route) => false,
+                                  );
                                 },
                                 child: Icon(
                                   Icons.cancel,
